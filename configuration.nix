@@ -18,6 +18,7 @@
 
   # Timezone
   time.timeZone = "Asia/Bangkok";
+  services.timesyncd.enable = true;
 
   # Locales
   i18n.defaultLocale = "en_US.UTF-8";
