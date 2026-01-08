@@ -86,6 +86,7 @@
     unmute = "pamixer -u";
     prism = "prismlauncher & disown";
     px = "pamixer";
+    discord = "discord & disown";
   };
 
   #pipewire
