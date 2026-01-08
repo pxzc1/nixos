@@ -88,6 +88,7 @@
     prism = "prismlauncher & disown";
     px = "pamixer";
     discord = "discord & disown";
+    spotify = "spotify & disown";
   };
 
   #git configs
