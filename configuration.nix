@@ -35,7 +35,9 @@
     isNormalUser = true;
     description = "Phattaraphan";
     extraGroups = [ "networkmanager" "wheel" "video" ]; # added video for NVIDIA
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      discord
+    ];
   };
 
   # Allow unfree packages (required for NVIDIA, VSCode)
