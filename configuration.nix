@@ -48,6 +48,14 @@
     xwayland.enable = true;
   };
 
+  services.flatpak.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    config.common.default = "hyprland";
+  };
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     LIBVA_DRIVER_NAME = "nvidia";
