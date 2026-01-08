@@ -78,6 +78,14 @@
     px = "pamixer";
   };
 
+  #pipewire
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+  };
+
   # System packages
   environment.systemPackages = with pkgs; [
     vscode
@@ -98,6 +106,7 @@
     prismlauncher
     unzip
     btop
+    pamixer
   ];
   
   #enable polkit (PolicyKit) agent
