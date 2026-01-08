@@ -61,7 +61,7 @@
   fonts = {
     packages = with pkgs; [
       ubuntu-classic       # Provides Ubuntu Mono
-      noto-fonts-thai      # Thai fallback
+      noto-fonts   # Thai fallback
     ];
 
     fontconfig = {
