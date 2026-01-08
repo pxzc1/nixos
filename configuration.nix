@@ -12,6 +12,9 @@
   # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  # Networking for spotify
+  networking.firewall.allowedTCPPorts = [ 57621 ]; #sync local tracks from your filesystem with mobile devices in the same network
+  networking.firewall.allowedUDPPorts = [ 5353 ]; #enable discovery of Google Cast devices (and possibly other Spotify Connect devices) in the same network by the Spotify app
 
   # Timezone
   time.timeZone = "Asia/Bangkok";
@@ -35,9 +38,7 @@
     isNormalUser = true;
     description = "Phattaraphan";
     extraGroups = [ "networkmanager" "wheel" "video" ]; # added video for NVIDIA
-    packages = with pkgs; [
-      discord
-    ];
+    packages = with pkgs; [];
   };
 
   # Allow unfree packages (required for NVIDIA, VSCode)
@@ -89,6 +90,13 @@
     discord = "discord & disown";
   };
 
+  #git configs
+  environment.etc."gitconfig".text = ''
+    [user]
+      name = phattaraphan
+      email = tonaok255@gmail.com
+  '';
+
   #pipewire
   services.pipewire = {
     enable = true;
@@ -118,6 +126,8 @@
     unzip
     btop
     pamixer
+    discord
+    spotify
   ];
   
   #enable polkit (PolicyKit) agent
