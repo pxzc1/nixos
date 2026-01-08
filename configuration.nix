@@ -57,6 +57,24 @@
     config.common.default = "hyprland";
   };
 
+  # Font configuration
+  fonts = {
+    packages = with pkgs; [
+      ubuntu-classic       # Provides Ubuntu Mono
+      prompt-font          # Thai font: Prompt
+      noto-fonts-thai      # Secondary Thai fallback
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        # This sets the order of preference for monospace (used by Kitty)
+        monospace = [ "Ubuntu Mono" "Prompt" "Noto Sans Thai" ];
+        sansSerif = [ "Ubuntu" "Prompt" "Noto Sans Thai" ];
+        serif     = [ "Ubuntu" "Prompt" "Noto Serif Thai" ];
+      };
+    };
+  };
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     LIBVA_DRIVER_NAME = "nvidia";
@@ -89,6 +107,7 @@
     px = "pamixer";
     discord = "discord & disown";
     spotify = "spotify & disown";
+    sober = "flatpak run org.vinegarhq.Sober";
   };
 
   #git configs
@@ -158,11 +177,13 @@
   # Greetd login manager with session choice
   services.greetd = {
     enable = true;
-    settings.default_session = {
-        user = "phattaraphan";
-        command = "Hyprland";
+    settings = {
+      default_session = {
+        # Use tuigreet to ask for credentials before starting Hyprland
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter"; 
+      };
     };
-    #greeter not specify
   };
 
   # Enable experimental Nix features
