@@ -61,16 +61,15 @@
   fonts = {
     packages = with pkgs; [
       ubuntu-classic       # Provides Ubuntu Mono
-      prompt-font          # Thai font: Prompt
-      noto-fonts-thai      # Secondary Thai fallback
+      noto-fonts-thai      # Thai fallback
     ];
 
     fontconfig = {
       defaultFonts = {
         # This sets the order of preference for monospace (used by Kitty)
-        monospace = [ "Ubuntu Mono" "Prompt" "Noto Sans Thai" ];
-        sansSerif = [ "Ubuntu" "Prompt" "Noto Sans Thai" ];
-        serif     = [ "Ubuntu" "Prompt" "Noto Serif Thai" ];
+        monospace = [ "Ubuntu Mono" "Noto Sans Thai" ];
+        serif     = [ "Ubuntu" "Noto Serif Thai" ];
+        sansSerif = [ "Ubuntu" "Noto Sans Thai" ];
       };
     };
   };
