@@ -147,6 +147,7 @@
     pamixer
     discord
     spotify
+    asusctl
   ];
   
   #enable polkit (PolicyKit) agent
