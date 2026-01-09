@@ -73,6 +73,9 @@
       };
     };
   };
+  
+  services.asusd.enable = true;
+  # services.supergfxd.enable = true; (remove # if want hybrid graphics, iGPU + dGPU)
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
