@@ -151,6 +151,7 @@
     discord
     spotify
     asusctl
+    nautilus
   ];
   
   #enable polkit (PolicyKit) agent
