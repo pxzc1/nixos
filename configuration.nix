@@ -106,7 +106,7 @@
     px = "pamixer";
     discord = "discord & disown";
     spotify = "spotify & disown";
-    sober = "flatpak run org.vinegarhq.Sober";
+    sober = "flatpak run org.vinegarhq.Sober & disown";
   };
 
   #git configs
