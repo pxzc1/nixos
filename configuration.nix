@@ -99,7 +99,7 @@
     };
   };
 
-  #aliases
+  # shell aliases
   environment.shellAliases = {
     brightset = "brightnessctl set";
     firefox = "firefox & disown";
@@ -110,22 +110,28 @@
     discord = "discord & disown";
     spotify = "spotify & disown";
     sober = "flatpak run org.vinegarhq.Sober & disown";
+    nautilus = "nautilus & disown";
   };
 
-  #git configs
+  # git configurations
   environment.etc."gitconfig".text = ''
     [user]
       name = phattaraphan
       email = tonaok255@gmail.com
   '';
 
-  #pipewire
+  # pipewire
   services.pipewire = {
     enable = true;
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
   };
+
+  # for nautilus file manager to avoid no mount, no trash, slow startup
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  programs.dconf.enable = true;
 
   # System packages
   environment.systemPackages = with pkgs; [
@@ -154,7 +160,7 @@
     nautilus
   ];
   
-  #enable polkit (PolicyKit) agent
+  # enable polkit (PolicyKit) agent
   security.polkit.enable = true;
 
   # Kernel & NVIDIA
