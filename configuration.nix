@@ -120,6 +120,10 @@
       email = tonaok255@gmail.com
   '';
 
+  services.printing.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+
   # pipewire
   services.pipewire = {
     enable = true;
