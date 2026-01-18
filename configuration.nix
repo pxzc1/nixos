@@ -202,7 +202,19 @@
   };
 
   # Enable experimental Nix features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true; # Merges identical files to save space
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  # hides old stuff from the boot menu but keeps them on disk for 7 days.
+  boot.loader.systemd-boot.configurationLimit = 5;
 
   system.stateVersion = "25.05";
 }
