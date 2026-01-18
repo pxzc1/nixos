@@ -111,6 +111,7 @@
     spotify = "spotify & disown";
     sober = "flatpak run org.vinegarhq.Sober & disown";
     nautilus = "nautilus & disown";
+    davinci = "davinci & disown";
   };
 
   # git configurations
