@@ -178,7 +178,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.opengl.enable = true;
+  hardware.grahpics.enable = true;
 
   hardware.nvidia = {
     modesetting.enable = true;
