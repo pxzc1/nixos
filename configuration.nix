@@ -83,6 +83,8 @@
     XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    CUDA_PATH = "/run/opengl-driver";
+    LD_LIBRARY_PATH = "/run/opengl-driver/lib:/run/opengl-driver-32/lib";
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
@@ -176,10 +178,11 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.graphics = {
+  hardware.opengl = {
     enable = true;
-    enable32Bit = true;
-  };
+    driSupport = true;
+    driSupport32Bit = true;
+};
 
   hardware.nvidia = {
     modesetting.enable = true;
