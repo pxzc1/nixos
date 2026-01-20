@@ -142,6 +142,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
+    cudaPackages.cudatoolkit
     vscode
     kitty
     firefox
