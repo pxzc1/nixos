@@ -12,13 +12,31 @@
   # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.timeServers = [ "time.google.com" "time1.google.com" "pool.ntp.org" ];
+
   # Networking for spotify
   networking.firewall.allowedTCPPorts = [ 57621 ]; #sync local tracks from your filesystem with mobile devices in the same network
   networking.firewall.allowedUDPPorts = [ 5353 ]; #enable discovery of Google Cast devices (and possibly other Spotify Connect devices) in the same network by the Spotify app
 
   # Timezone
   time.timeZone = "Asia/Bangkok";
-  services.timesyncd.enable = true;
+  services.timesyncd = {
+    enable = true;
+    servers = [ "time.google.com" "time1.google.com" "pool.ntp.org" ];
+  };
+
+  systemd.services.delayed-time-sync = {
+    description = "Delayed FORCE Time Synchronization";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = ''
+        /run/current-system/sw/bin/sleep 20
+        /run/current-system/sw/bin/systemctl restart systemd-timesyncd
+      '';
+    };
+  };
 
   # Locales
   i18n.defaultLocale = "en_US.UTF-8";
