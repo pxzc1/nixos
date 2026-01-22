@@ -25,19 +25,6 @@
     servers = [ "time.google.com" "time1.google.com" "pool.ntp.org" ];
   };
 
-  systemd.services.delayed-time-sync = {
-    description = "Delayed FORCE Time Synchronization";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = ''
-        /run/current-system/sw/bin/sleep 20
-        /run/current-system/sw/bin/systemctl restart systemd-timesyncd
-      '';
-    };
-  };
-
   # Locales
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
