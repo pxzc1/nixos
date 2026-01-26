@@ -174,6 +174,9 @@
     nautilus
     acpi
     tuigreet
+    tree
+    vlc
+    loupe #eog (gnome) / feh (terminal-friendly)
   ];
   
   # enable polkit (PolicyKit) agent
