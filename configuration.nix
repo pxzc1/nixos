@@ -179,6 +179,8 @@
     tree
     vlc
     loupe #eog (gnome) / feh (terminal-friendly)
+    mako
+    libnotify
   ];
   
   # enable polkit (PolicyKit) agent
