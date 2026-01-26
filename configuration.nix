@@ -63,6 +63,16 @@
     config.common.default = "hyprland";
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk
+      fcitx5-qt
+      fcitx5-configtool
+      fcitx5-libthai
+    ];
+  };
+
   # Font configuration
   fonts = {
     packages = with pkgs; [
@@ -91,6 +101,10 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     CUDA_PATH = "/run/opengl-driver";
     LD_LIBRARY_PATH = "/run/opengl-driver/lib:/run/opengl-driver-32/lib";
+
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE  = "fcitx";
+    XMODIFIERS    = "@im=fcitx";
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
