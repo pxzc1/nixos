@@ -120,6 +120,8 @@
     sober = "flatpak run org.vinegarhq.Sober & disown";
     nautilus = "nautilus & disown";
     davinci = "davinci & disown";
+    vlc = "vlc & disown";
+    loupe = "loupe & disown";
   };
 
   # git configurations
