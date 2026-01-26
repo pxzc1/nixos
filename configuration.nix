@@ -110,18 +110,18 @@
   # shell aliases
   environment.shellAliases = {
     brightset = "brightnessctl set";
-    firefox = "firefox";
+    firefox = "setsid firefox >/dev/null 2>&1 &";
     mute = "pamixer -m";
     unmute = "pamixer -u";
-    prism = "prismlauncher";
+    prism = "setsid prismlauncher >/dev/null 2>&1 &";
     px = "pamixer";
-    discord = "discord";
-    spotify = "spotify";
-    sober = "flatpak run org.vinegarhq.Sober";
-    nautilus = "nautilus";
-    davinci = "davinci";
-    vlc = "vlc";
-    loupe = "loupe";
+    discord = "setsid discord >/dev/null 2>&1 &";
+    spotify = "setsid spotify >/dev/null 2>&1 &";
+    sober = "setsid flatpak run org.vinegarhq.Sober >/dev/null 2>&1 &";
+    nautilus = "setsid nautilus >/dev/null 2>&1 &";
+    davinci = "setsid davinci >/dev/null 2>&1 &";
+    vlc = "setsid vlc >/dev/null 2>&1 &";
+    loupe = "setsid loupe >/dev/null 2>&1 &";
   };
 
   # git configurations
