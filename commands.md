@@ -7,3 +7,4 @@
 6. ssh-add ~/.ssh/id_ed25519
 7. ssh -T git@github.com
 8. sudo SSH_AUTH_SOCK=$SSH_AUTH_SOCK git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos push -u origin main
+(might try sudo git push <remote> <branch>)
