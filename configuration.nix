@@ -194,6 +194,7 @@
     loupe #eog (gnome) / feh (terminal-friendly)
     mako
     libnotify
+    blender
   ];
   
   # enable polkit (PolicyKit) agent
