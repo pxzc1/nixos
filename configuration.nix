@@ -49,6 +49,17 @@
     ];
   };
 
+  #github configs
+  programs.git = {
+    enable = true;
+    config = {
+      user = {
+        name = "pxzc1";
+        email = "tonaok2555@gmail.com";
+      };
+    };
+  };
+
   # Users
   users.users.phattaraphan = {
     isNormalUser = true;
@@ -135,6 +146,7 @@
     davinci = "setsid davinci >/dev/null 2>&1 &";
     vlc = "setsid vlc >/dev/null 2>&1 &";
     loupe = "setsid loupe >/dev/null 2>&1 &";
+    blender = "setsid blender >/dev/null 2>&1 &";
   };
 
   services.printing.enable = true;
