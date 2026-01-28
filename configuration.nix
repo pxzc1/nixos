@@ -137,13 +137,6 @@
     loupe = "setsid loupe >/dev/null 2>&1 &";
   };
 
-  # git configurations
-  environment.etc."gitconfig".text = ''
-    [user]
-      name = pxzc1
-      email = tonaok255@gmail.com
-  '';
-
   services.printing.enable = true;
   services.avahi.enable = true;
   services.avahi.nssmdns4 = true;
