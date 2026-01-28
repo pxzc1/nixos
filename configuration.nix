@@ -39,6 +39,16 @@
     LC_TIME = "th_TH.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk
+      qt6Packages.fcitx5-configtool
+    ];
+  };
+
   # Users
   users.users.phattaraphan = {
     isNormalUser = true;
@@ -91,6 +101,9 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     CUDA_PATH = "/run/opengl-driver";
     LD_LIBRARY_PATH = "/run/opengl-driver/lib:/run/opengl-driver-32/lib";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
