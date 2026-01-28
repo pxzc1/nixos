@@ -200,6 +200,8 @@
     mako
     libnotify
     blender
+    davinci-resolve
+    obs-studio
   ];
   
   # enable polkit (PolicyKit) agent
