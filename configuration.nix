@@ -140,7 +140,7 @@
   # git configurations
   environment.etc."gitconfig".text = ''
     [user]
-      name = phattaraphan
+      name = pxzc1
       email = tonaok255@gmail.com
   '';
 
