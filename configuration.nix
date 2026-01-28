@@ -143,10 +143,11 @@
     spotify = "setsid spotify >/dev/null 2>&1 &";
     sober = "setsid flatpak run org.vinegarhq.Sober >/dev/null 2>&1 &";
     nautilus = "setsid nautilus >/dev/null 2>&1 &";
-    davinci = "setsid davinci >/dev/null 2>&1 &";
+    davinci = "setsid davinci-resolve >/dev/null 2>&1 &";
     vlc = "setsid vlc >/dev/null 2>&1 &";
     loupe = "setsid loupe >/dev/null 2>&1 &";
     blender = "setsid blender >/dev/null 2>&1 &";
+    obs = "setsid obs >/dev/null 2>&1 &";
   };
 
   services.printing.enable = true;
