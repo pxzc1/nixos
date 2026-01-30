@@ -204,6 +204,8 @@
     blender
     davinci-resolve
     obs-studio
+    xxd-tinyxxd
+    bat
   ];
   
   # enable polkit (PolicyKit) agent
