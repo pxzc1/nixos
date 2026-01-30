@@ -205,6 +205,8 @@
     xxd
     bat
     fastfetch
+    grim
+    slurp
   ];
   
   # enable polkit (PolicyKit) agent
