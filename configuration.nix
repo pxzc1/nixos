@@ -181,8 +181,6 @@
     python313
     python313Packages.pip
     git
-    neofetch
-    home-manager
     hyprpaper
     polkit_gnome
     brightnessctl
