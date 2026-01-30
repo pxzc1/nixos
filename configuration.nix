@@ -204,7 +204,7 @@
     blender
     davinci-resolve
     obs-studio
-    xxd-tinyxxd
+    xxd
     bat
   ];
   
