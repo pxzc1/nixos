@@ -148,6 +148,7 @@
     loupe = "setsid loupe >/dev/null 2>&1 &";
     blender = "setsid blender >/dev/null 2>&1 &";
     obs = "setsid obs >/dev/null 2>&1 &";
+    actiona = "setsid flatpak run org.actiona.Actiona >/dev/null 2>&1 &";
   };
 
   services.printing.enable = true;
