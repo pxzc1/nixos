@@ -207,6 +207,7 @@
     fastfetch
     grim
     slurp
+    ollama
   ];
   
   # enable polkit (PolicyKit) agent
