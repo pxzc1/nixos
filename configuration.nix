@@ -255,10 +255,22 @@
     };
   };
 
+  swapDevices = [
+    { device = "/swapfile"; size = 16*1024; }
+  ];
+
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 5;
+    freeSwapThreshold = 5;
+  };
+
   # Enable experimental Nix features
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true; # Merges identical files to save space
+    max-jobs = 2;
+    cores = 2;
   };
 
   nix.gc = {
