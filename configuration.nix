@@ -268,8 +268,6 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true; # Merges identical files to save space
-    max-jobs = 2;
-    cores = 2;
   };
 
   nix.gc = {
