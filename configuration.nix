@@ -233,16 +233,6 @@
     powerManagement.enable = true;
   };
 
-  # Enable CUDA builds in nixpkgs
-  nixpkgs.config.cudaSupport = true;
-
-  # Ollama for running local LLMs
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-cuda; # REQUIRED for GPU
-    acceleration = "cuda";
-  };
-
   # Greetd login manager with session choice
   services.greetd = {
     enable = true;
@@ -256,7 +246,7 @@
   };
 
   swapDevices = [
-    { device = "/swapfile"; size = 16*1024; }
+    { device = "/swapfile"; size = 32*1024; }
   ];
 
   services.earlyoom = {
