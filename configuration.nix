@@ -207,7 +207,6 @@
     fastfetch
     grim
     slurp
-    ollama
   ];
   
   # enable polkit (PolicyKit) agent
@@ -232,6 +231,16 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     powerManagement.enable = true;
+  };
+
+  # Enable CUDA builds in nixpkgs
+  nixpkgs.config.cudaSupport = true;
+
+  # Ollama for running local LLMs
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda; # REQUIRED for GPU
+    acceleration = "cuda";
   };
 
   # Greetd login manager with session choice
@@ -261,5 +270,5 @@
   # hides old stuff from the boot menu but keeps them on disk for 7 days.
   boot.loader.systemd-boot.configurationLimit = 5;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
