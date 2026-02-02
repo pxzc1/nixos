@@ -145,10 +145,11 @@
     nautilus = "setsid nautilus >/dev/null 2>&1 &";
     davinci = "setsid davinci-resolve >/dev/null 2>&1 &";
     vlc = "setsid vlc >/dev/null 2>&1 &";
-    loupe = "f(){ setsid loupe \"$@\" >/dev/null 2>&1 & }; f";
+    loupe = "setsid loupe >/dev/null 2>&1 &";
     blender = "setsid blender >/dev/null 2>&1 &";
     obs = "setsid obs >/dev/null 2>&1 &";
     deact = "deactivate"; #only for deactivate from python virtualenv
+    libreoffice = "setsid libreoffice >/dev/null 2>&1 &";
   };
 
   services.printing.enable = true;
