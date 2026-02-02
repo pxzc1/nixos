@@ -150,6 +150,7 @@
     obs = "setsid obs >/dev/null 2>&1 &";
     deact = "deactivate"; #only for deactivate from python virtualenv
     libreoffice = "setsid libreoffice >/dev/null 2>&1 &";
+    code = "setsid vscode-fhs >/dev/null 2>&1 &";
   };
 
   services.printing.enable = true;
@@ -172,7 +173,7 @@
   # System packages
   environment.systemPackages = with pkgs; [
     cudaPackages.cudatoolkit
-    vscode
+    vscode-fhs
     kitty
     firefox
     gcc
