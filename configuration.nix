@@ -209,6 +209,8 @@
     grim
     slurp
     libreoffice-fresh
+    nodejs
+    lsof
   ];
   
   # enable polkit (PolicyKit) agent
