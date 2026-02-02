@@ -207,6 +207,7 @@
     fastfetch
     grim
     slurp
+    libreoffice-fresh
   ];
   
   # enable polkit (PolicyKit) agent
@@ -231,6 +232,11 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     powerManagement.enable = true;
+  };
+
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
   };
 
   # Greetd login manager with session choice
