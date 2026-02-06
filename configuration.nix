@@ -211,6 +211,7 @@
     libreoffice-fresh
     nodejs
     lsof
+    rustup
   ];
   
   # enable polkit (PolicyKit) agent
