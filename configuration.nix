@@ -118,6 +118,8 @@
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
+    ADW_DISABLE_PORTAL = "0"; # Ensures libadwaita apps look at the portal settings
+    GTK_THEME = "Adwaita:dark"; # Forces many GTK apps to dark mode
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
