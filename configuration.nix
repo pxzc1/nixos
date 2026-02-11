@@ -82,7 +82,6 @@
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
     ];
     config.common.default = "hyprland";
   };
@@ -118,8 +117,6 @@
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
-    ADW_DISABLE_PORTAL = "0"; # Ensures libadwaita apps look at the portal settings
-    GTK_THEME = "Adwaita:dark"; # Forces many GTK apps to dark mode
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
@@ -218,9 +215,6 @@
     nodejs
     lsof
     rustup
-    glib
-    gnome-themes-extra
-    adwaita-icon-theme
   ];
   
   # enable polkit (PolicyKit) agent
