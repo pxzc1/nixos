@@ -80,7 +80,10 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
     config.common.default = "hyprland";
   };
 
@@ -168,6 +171,7 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   programs.dconf.enable = true;
+
 
   # System packages
   environment.systemPackages = with pkgs; [
