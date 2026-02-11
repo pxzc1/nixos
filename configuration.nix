@@ -218,6 +218,9 @@
     nodejs
     lsof
     rustup
+    glib
+    gnome-themes-extra
+    adwaita-icon-theme
   ];
   
   # enable polkit (PolicyKit) agent
